@@ -13,6 +13,7 @@ import population_data_preprocessing
 import co2_data_preprocessing
 import draw_scatter_plot
 import draw_correlation_plot
+import temp_analysis
 
 
 '----------------------------------------This section is for co2 vs population analysis-----------------------'
@@ -48,7 +49,9 @@ draw_scatter_plot.scatter_plot(population_data, co2_data)
 '------------------------------------------------CO2 vs population section complete-------------------------'
 
 
+temp_analysis.temperature_analysis()
 
+'------------------------------------------------------------------------------------------------------------'
 
 
 
