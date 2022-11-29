@@ -14,6 +14,7 @@ import co2_data_preprocessing
 import draw_scatter_plot
 import draw_correlation_plot
 import temp_analysis
+import buzz_words
 
 
 '----------------------------------------This section is for co2 vs population analysis-----------------------'
@@ -102,7 +103,9 @@ scatter_energy_ganeshan.plot_scatter_energy(df_co2, df)
 temp_analysis.temperature_analysis()
 
 '------------------------------------------------------------------------------------------------------------'
+buzz_words.get_buzz_words()
 
+'--------------------------------------------------------------------------------------------------------------'
 
 
 
