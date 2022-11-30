@@ -48,7 +48,10 @@ def get_buzz_words():
     plt.imshow(wordcloud)
     plt.axis("off")
     plt.tight_layout(pad=0)
-    plt.savefig('../Data/buzz_words.png')
+    #plt.savefig('../Data/buzz_words.png')
+    st.subheader('Most used words around climate change')
+    'Analysis on tweets data showing some of the most used words around climate change. Size of the words show ' \
+    'its frequency with the largest being the most used word'
     st.image('../Data/buzz_words.png')
     #plt.show()
 
