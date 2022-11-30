@@ -13,6 +13,7 @@ def load_data(filepath):
     """
     pr_df = pd.read_csv(filepath)
     pr_df = pr_df.dropna(axis=0)
+    pr_df = pr_df.sort_values(by='regime_row_owid', axis=0, ascending=True)
     pr_df.regime_row_owid = pd.cut(pr_df.regime_row_owid, 4, labels=["closed autocracies", "electoral autocracies", "electoral democracies", "liberal democracies"])
     return pr_df
 

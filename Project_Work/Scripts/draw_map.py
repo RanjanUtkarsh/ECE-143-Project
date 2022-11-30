@@ -12,9 +12,11 @@ def world_map(df, year, title):
     """
     # create the map !
     # locations = alpha 3 code for each country
+    color = 'YlGn'
     target = title
     if title == 'co2':
         title = "CO2 Emission in "
+        color = 'RdYlGn_r'
     elif title == 'eco_freedom':
         title = "Economic Freedom in "
     elif title == 'politic regime':
@@ -24,7 +26,7 @@ def world_map(df, year, title):
         raise ValueError("Sorry, there is no data about {} in {}".format(title, year))
 
     fig = px.choropleth(df, locations=df['Code'], color=target,
-                        color_continuous_scale='RdYlGn_r', template="plotly_dark",
+                        color_continuous_scale=color, template="plotly_dark",
                         title=title + year)
 
     # set the mapbox (several possibilities)

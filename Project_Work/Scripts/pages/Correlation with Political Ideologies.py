@@ -33,16 +33,27 @@ def political_analysis():
         year = st.sidebar.slider("Select the year you want to see", min_value=min_year, max_value=max_year,
                                  value=min_year, step=1)
         is_compared = st.sidebar.checkbox("Compared with CO2 Emission?")
-
+    if datatype == "eco_freedom":
+        st.markdown("This heat map shows the degree of economic freedom of countries all over the world. The higher "
+                  "score a country has, the greener a country will be and the more economic free a country will be.")
+    else:
+        st.markdown("This heat map shows political type of countries from all around the world. There are 4 types: "
+                    "1. closed autocracies, "
+                    "2. electoral autocracies, "
+                    "3. electoral democracies, "
+                    "4. liberal democracies. "
+                    "The higher score is, the more liberal a country will be")
     draw_map.plot(df, year, datatype)
-
     with st.sidebar:
         if is_compared:
             years = sorted(set(pr_co2_df.year))
             compared_year = st.sidebar.slider("Please select the year for which you want to see the energy consumption",
                                               min_value=years[0], max_value=years[-1], value=years[0], step=1)
     if is_compared:
+        st.markdown("This heat map shows the degree of CO2 Emission of each country in a certain year. And the unit "
+                    "is MtCO2e.")
         draw_map.plot(pr_co2_df, str(compared_year), 'co2')
+
 
     country = st.selectbox("Select which country do you want to see", sorted(set(eco_co2_df.country)))
     draw_bar_chart.bar_chart(eco_co2_df, country)
