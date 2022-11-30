@@ -18,7 +18,7 @@ def data_preprocessing(filepath):
         if filename == ".DS_Store":
             continue
         year = filename[5:9]
-        df = pd.read_excel('./dataset/eco_freedom/' + filename, usecols=['Country Name', 'Financial Freedom'],
+        df = pd.read_excel(filepath + filename, usecols=['Country Name', 'Financial Freedom'],
                            na_values='N/A')
         for index, row in df.iterrows():
             eco_dic["country"].append(row['Country Name'])
