@@ -180,12 +180,12 @@ def create_co2_temp_fig(temp_df, co2_df, country):
  
     return fig
 
-def world_map(df, year):
+def world_map(df, year, title):
     # create the map !
     # locations = alpha 3 code for each country
     fig = px.choropleth(df, locations=df.index, color=year,
                         color_continuous_scale='RdYlGn_r', template="plotly_dark",
-                       title='World Temperature ' + year)
+                       title=title)
     
     # set the mapbox (several possibilities)
     # set the zoom when the graph is displayed
@@ -201,7 +201,8 @@ def world_map(df, year):
 #                  # place of the dropdown menu
 #                 direction="down",showactive=True,x=0.005,
 #                 xanchor="left",y=1.4,yanchor="top") ] )
-    fig.show()
+    # fig.show()
+    return fig
 
 def temp_vs_co2(temp_df, co2_df, country_codes):
     '''
@@ -305,7 +306,8 @@ def temperature_analysis():
             title="Temperature VS. C02 Correlation",
             title_x=0.5,
             yaxis_title="Correlation")
-
+    
+    fig = world_map(df_correl, 'Corr', 'Temperature and C02 Correlation') 
     st.plotly_chart(fig)
     #fig.show()
 
