@@ -1,2 +1,0 @@
-To delete .DS_STORE
--> find . -name '.DS_Store' -type f -delete
