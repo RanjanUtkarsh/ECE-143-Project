@@ -1,14 +1,7 @@
 # draw_correlation_plot.py
 
 import pandas as pd
-import numpy as np
 import plotly.express as px
-import plotly.graph_objects as go
-import pycountry
-import geopandas
-import folium
-from folium.plugins import HeatMap, HeatMapWithTime
-from datetime import datetime, timedelta
 import streamlit as st
 
 def plot(df):

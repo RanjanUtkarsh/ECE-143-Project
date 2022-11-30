@@ -1,23 +1,5 @@
-import pandas as pd
-import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
-import pycountry
-import geopandas
-import os
-import sys
 import streamlit as st
-import logging
 
-import population_data_preprocessing
-import co2_data_preprocessing
-import draw_scatter_plot
-import draw_correlation_plot
-import temp_analysis
-import buzz_words
-import population
-import gdp
-import political
 
 st.set_page_config(
     page_title="Project ECE 143",
